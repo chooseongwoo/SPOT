@@ -1,14 +1,16 @@
-import { Text } from "react-native";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "@/navigations/RootNavigationType";
+import IconCamera from "@/components/icons/IconCamera";
 import * as S from "./style";
+import DefaultProfile from "@/assets/images/DefaultProfile.png";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Register">;
-
-const RegisterScreen = ({ navigation }: Props) => {
+const RegisterScreen = () => {
   return (
     <S.Container>
-      <Text>회원가입 화면</Text>
+      <S.ProfileImageBox>
+        <S.Image source={DefaultProfile} />
+        <S.CameraLayout>
+          <IconCamera />
+        </S.CameraLayout>
+      </S.ProfileImageBox>
     </S.Container>
   );
 };
