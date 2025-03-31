@@ -2,7 +2,7 @@ import { IconType } from "@/types/icon.type";
 import React from "react";
 import Svg, { Path, G } from "react-native-svg";
 
-const ChevronLeft = ({ onPress }: IconType) => {
+const IconChevronLeft = ({ onPress }: IconType) => {
   return (
     <Svg
       width="16"
@@ -23,4 +23,4 @@ const ChevronLeft = ({ onPress }: IconType) => {
   );
 };
 
-export default ChevronLeft;
+export default IconChevronLeft;
