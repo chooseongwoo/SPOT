@@ -1,9 +1,9 @@
 const theme = {
   green: {
-    1: "#EAFAF4",
-    2: "#2AD18E",
-    3: "#26BC80",
-    4: "#22A772",
+    light: "#EAFAF4",
+    default: "#2AD18E",
+    hovder: "#26BC80",
+    active: "#22A772",
   },
   gray: {
     1: "#F9F9F9",
