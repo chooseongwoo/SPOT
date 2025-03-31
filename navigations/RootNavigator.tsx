@@ -18,6 +18,7 @@ export default function RootNavigator() {
           backgroundColor: theme.white,
         },
         headerTitleAlign: "center",
+        headerTitleStyle: { fontSize: 18, fontWeight: 600, color: theme.black },
       }}
     >
       <Stack.Screen
