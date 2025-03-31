@@ -1,7 +1,7 @@
 const fontGenerator = (weight: number, size: number, lineHeight: number) => ({
-  fontWeight: weight,
-  fontSize: `${size}rem`,
-  lineHeight: `${lineHeight}%`,
+  "font-weight": weight,
+  "font-size": `${size}rem`,
+  "line-height": `${lineHeight}%`,
 });
 
 const font = {
