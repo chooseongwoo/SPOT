@@ -1,3 +1,4 @@
 export interface IconType {
-  onPress: () => void;
+  onPress?: () => void;
+  color?: string;
 }
