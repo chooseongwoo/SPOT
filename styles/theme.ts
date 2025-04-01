@@ -2,7 +2,7 @@ const theme = {
   green: {
     light: "#EAFAF4",
     default: "#2AD18E",
-    hovder: "#26BC80",
+    hover: "#26BC80",
     active: "#22A772",
   },
   gray: {
