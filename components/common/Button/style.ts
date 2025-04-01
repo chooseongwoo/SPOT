@@ -5,7 +5,7 @@ interface ButtonProps {
   disabled: boolean;
 }
 
-export const ButtonContainer = styled.View<ButtonProps>`
+export const ButtonContainer = styled.Pressable<ButtonProps>`
   width: 100%;
   padding: 10px 0;
   position: absolute;
