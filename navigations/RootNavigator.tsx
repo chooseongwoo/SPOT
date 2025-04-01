@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RegisterScreen from "@/screens/register";
 import { RootStackParamList } from "@/navigations/RootNavigationType";
-import IconChevcronLeft from "@/components/icons/IconChevronLeft";
+import { IconChevronLeft } from "@/components/icons";
 import { theme } from "@/styles";
 import { View } from "react-native";
 
@@ -28,7 +28,7 @@ export default function RootNavigator() {
           title: "프로필 설정",
           headerLeft: () => (
             <View style={{ paddingLeft: 10 }}>
-              <IconChevcronLeft onPress={() => navigation.goBack()} />
+              <IconChevronLeft onPress={() => navigation.goBack()} />
             </View>
           ),
           headerShadowVisible: false,
