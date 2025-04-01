@@ -9,7 +9,7 @@ export const ButtonContainer = styled.Pressable<ButtonProps>`
   width: 100%;
   padding: 10px 0;
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   height: 56px;
   border-radius: 12px;
   background: ${({ disabled }: ButtonProps) =>
