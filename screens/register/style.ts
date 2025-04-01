@@ -1,4 +1,4 @@
-import { flex, font, theme } from "@/styles";
+import { flex, theme } from "@/styles";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
@@ -21,7 +21,7 @@ export const Image = styled.Image`
   border: 1px solid ${theme.gray[2]};
 `;
 
-export const CameraLayout = styled.View`
+export const CameraLayout = styled.Pressable`
   position: absolute;
   border-radius: 100%;
   border: 1px solid ${theme.gray[2]};
