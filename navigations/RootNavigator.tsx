@@ -1,6 +1,8 @@
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View } from "react-native";
+
 import RegisterScreen from "@/screens/register";
 import HomeScreen from "@/screens/home";
 import {
@@ -10,10 +12,13 @@ import {
   IconProfile,
 } from "@/components/icons";
 import { theme } from "@/styles";
-import { RootStackParamList } from "@/navigations/RootNavigationType";
+import {
+  RootStackParamList,
+  TabParamList,
+} from "@/navigations/RootNavigationType";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
-const Tab = createBottomTabNavigator<RootStackParamList>();
+const Tab = createBottomTabNavigator<TabParamList>();
 
 const COMMON_TAB_LABEL_STYLE = {
   fontSize: 11,
@@ -86,7 +91,7 @@ export default function RootNavigator() {
           color: theme.black,
         },
       }}
-      initialRouteName="Home"
+      initialRouteName="MainTabs"
     >
       <Stack.Screen
         name="Register"
@@ -101,7 +106,7 @@ export default function RootNavigator() {
         })}
       />
       <Stack.Screen
-        name="Home"
+        name="MainTabs"
         component={TabNavigator}
         options={{ headerShown: false }}
       />

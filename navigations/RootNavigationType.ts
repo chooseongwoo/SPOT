@@ -1,6 +1,10 @@
 export type RootStackParamList = {
   Register: undefined;
+  MainTabs: undefined;
+};
+
+export type TabParamList = {
   Home: undefined;
-  Message: undefined;
+  Register: undefined;
   Profile: undefined;
 };
