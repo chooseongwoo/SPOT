@@ -3,8 +3,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   ${flex.COLUMN_VERTICAL};
-  width: 100%;
-  height: 100%;
+  flex: 1;
   background: ${theme.white};
   padding: 15px 24px 6px;
   position: relative;
