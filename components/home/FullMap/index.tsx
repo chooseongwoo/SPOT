@@ -1,17 +1,17 @@
 import React from "react";
-import MapView, { PROVIDER_DEFAULT } from "react-native-maps";
+import MapView from "react-native-maps";
 
 const FullMap = () => {
   return (
     <MapView
       style={{ flex: 1 }}
       initialRegion={{
-        latitude: 37.5665,
-        longitude: 126.978,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
+        latitude: 35.189062673028,
+        longitude: 128.90405082258,
+        latitudeDelta: 0.0022,
+        longitudeDelta: 0.0022,
       }}
-      provider={PROVIDER_DEFAULT}
+      // mapType="terrain"
     />
   );
 };
