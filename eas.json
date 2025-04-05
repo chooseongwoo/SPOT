@@ -4,7 +4,8 @@
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
-        "scheme": "SPOT"
+        "scheme": "SPOT",
+        "buildConfiguration": "Release"
       }
     }
   }
