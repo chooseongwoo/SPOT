@@ -6,7 +6,6 @@
     "production": {
       "developmentClient": true,
       "distribution": "internal",
-      "workflow": "managed",
       "ios": {
         "scheme": "SPOT",
         "buildConfiguration": "Release"
