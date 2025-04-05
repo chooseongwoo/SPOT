@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "build": "eas build --platform ios --non-interactive"
+    "build": "eas build --platform ios --profile production --non-interactive"
   },
   "jest": {
     "preset": "jest-expo"
