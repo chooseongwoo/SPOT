@@ -1,7 +1,7 @@
 {
   "build": {
     "production": {
-      "developmentClient": true,s
+      "developmentClient": true,
       "installCommand": "pnpm install --no-frozen-lockfile",
       "distribution": "internal",
       "ios": {
