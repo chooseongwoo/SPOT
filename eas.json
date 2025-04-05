@@ -11,8 +11,5 @@
         "buildConfiguration": "Release"
       }
     }
-  },
-  "hooks": {
-    "pre-install": "scripts/eas-build-pre-install.sh"
   }
 }
