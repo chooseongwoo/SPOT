@@ -1,13 +1,18 @@
 {
+  "cli": {
+    "version": ">=6.0.0"
+  },
   "build": {
     "production": {
       "developmentClient": true,
-      "installCommand": "pnpm install --no-frozen-lockfile",
       "distribution": "internal",
       "ios": {
         "scheme": "SPOT",
         "buildConfiguration": "Release"
       }
     }
+  },
+  "hooks": {
+    "pre-install": "scripts/eas-build-pre-install.sh"
   }
 }
