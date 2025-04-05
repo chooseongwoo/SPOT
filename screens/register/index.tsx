@@ -36,7 +36,7 @@ const RegisterScreen = ({ navigation }: Props) => {
       <Button
         title="완료"
         onPress={() => {
-          navigation.replace("Home");
+          return 0;
         }}
         isDisabled={false}
       />
