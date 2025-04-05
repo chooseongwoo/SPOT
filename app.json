@@ -10,13 +10,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.chooseongwoo.SPOT"
+      "bundleIdentifier": "com.chooseongwoo.SPOT",
+      "entryPoint": "App.tsx"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.chooseongwoo.SPOT"
     },
     "plugins": [
       [
@@ -30,6 +32,12 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9ced5193-e990-43fa-b133-4d2eab5c4119"
+      }
+    },
+    "owner": "chooseongwoo"
   }
 }
