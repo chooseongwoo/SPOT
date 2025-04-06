@@ -12,9 +12,6 @@
     "lint": "expo lint",
     "build": "eas build --platform ios --profile production --non-interactive"
   },
-  "jest": {
-    "preset": "jest-expo"
-  },
   "dependencies": {
     "@react-native-community/cli": "latest",
     "@expo/vector-icons": "^14.0.2",

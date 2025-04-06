@@ -1,4 +1,3 @@
-// App.tsx
 import { NavigationContainer } from "@react-navigation/native";
 import RootNavigator from "@/navigations/RootNavigator";
 import * as SplashScreen from "expo-splash-screen";
