@@ -10,9 +10,9 @@ import { useUploadImage } from "@/hooks";
 type Props = NativeStackScreenProps<RootStackParamList, "Register">;
 
 const RegisterScreen = ({ navigation }: Props) => {
-  const [selectedImage, setSelectedImage] = useState<string | File>(
-    DefaultProfile
-  );
+  const [selectedImage, setSelectedImage] = useState<
+    string | { uri: string } | number
+  >(DefaultProfile);
 
   const uploadImage = useUploadImage();
 
