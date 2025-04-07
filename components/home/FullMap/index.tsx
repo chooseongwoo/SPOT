@@ -1,5 +1,5 @@
 import React from "react";
-import MapView from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
 const FullMap = () => {
   return (
@@ -11,7 +11,8 @@ const FullMap = () => {
         latitudeDelta: 0.0022,
         longitudeDelta: 0.0022,
       }}
-      // mapType="terrain"
+      mapType="terrain"
+      provider={PROVIDER_GOOGLE}
     />
   );
 };
