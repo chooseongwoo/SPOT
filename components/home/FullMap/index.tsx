@@ -1,18 +1,20 @@
 import React from "react";
+import { Platform } from "react-native";
+import * as Device from "expo-device";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import { customMapStyle } from "@/assets/customMapStyle";
 
 const FullMap = () => {
   return (
     <MapView
+      provider={
+        Platform.OS === "android" || (Platform.OS === "ios" && Device.isDevice)
+          ? PROVIDER_GOOGLE
+          : undefined
+      }
       style={{ flex: 1 }}
-      initialRegion={{
-        latitude: 35.189062673028,
-        longitude: 128.90405082258,
-        latitudeDelta: 0.0022,
-        longitudeDelta: 0.0022,
-      }}
       mapType="terrain"
-      provider={PROVIDER_GOOGLE}
+      customMapStyle={customMapStyle}
     />
   );
 };
