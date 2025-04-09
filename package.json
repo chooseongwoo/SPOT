@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint",
-    "build": "eas build --platform ios --profile production --non-interactive"
+    "build": "eas build --profile development --platform ios"
   },
   "dependencies": {
     "@expo/metro-config": "^0.19.12",
@@ -37,6 +37,7 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-native": "0.76.7",
+    "react-native-geolocation-service": "^5.3.1",
     "react-native-gesture-handler": "~2.20.2",
     "react-native-maps": "^1.20.1",
     "react-native-reanimated": "~3.16.7",
