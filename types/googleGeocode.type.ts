@@ -1,3 +1,9 @@
+export interface GoogleGeocodeResponse {
+  results: GoogleGeocodeResult[];
+  status: string;
+  plus_code?: any;
+}
+
 export interface GoogleGeocodeResult {
   formatted_address: string;
   address_components: AddressComponent[];
