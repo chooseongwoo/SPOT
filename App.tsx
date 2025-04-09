@@ -3,6 +3,7 @@ import RootNavigator from "@/navigations/RootNavigator";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState, useCallback } from "react";
 import { View } from "react-native";
+import QueryClientProvider from "@/providers/QueryProviders";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,10 +26,12 @@ export default function App() {
   if (!ready) return null;
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-      <NavigationContainer>
-        <RootNavigator />
-      </NavigationContainer>
-    </View>
+    <QueryClientProvider>
+      <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+        <NavigationContainer>
+          <RootNavigator />
+        </NavigationContainer>
+      </View>
+    </QueryClientProvider>
   );
 }
