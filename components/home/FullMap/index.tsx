@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Platform, Text } from "react-native";
+import { Platform } from "react-native";
 import * as Device from "expo-device";
 import MapView, { PROVIDER_GOOGLE, Region } from "react-native-maps";
 import { customMapStyle } from "@/assets/customMapStyle";
@@ -9,6 +9,8 @@ import Geolocation, {
 } from "react-native-geolocation-service";
 import { requestPermission } from "@/utils/locationPermission";
 import { useAddressQuery } from "@/services/location/location.query";
+import { extractShortAddress } from "@/utils/extractShortAddress";
+import * as S from "./style";
 
 const FullMap = () => {
   const [location, setLocation] = useState<GeoPosition | null>(null);
@@ -18,6 +20,7 @@ const FullMap = () => {
   };
 
   const { data: currentLocation } = useAddressQuery(latitude, longitude);
+  console.log(currentLocation);
 
   useEffect(() => {
     (async () => {
@@ -65,9 +68,7 @@ const FullMap = () => {
           customMapStyle={customMapStyle}
           showsUserLocation={true}
         >
-          <Text style={{ position: "absolute", left: 20, top: 40 }}>
-            {currentLocation?.formatted_address}
-          </Text>
+          <S.AddressText>{extractShortAddress(currentLocation)}</S.AddressText>
         </MapView>
       )}
     </>
