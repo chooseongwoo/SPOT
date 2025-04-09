@@ -7,18 +7,7 @@ import Geolocation, {
   GeoPosition,
   GeoError,
 } from "react-native-geolocation-service";
-
-const requestPermission = async () => {
-  try {
-    if (Platform.OS === "ios") {
-      return await Geolocation.requestAuthorization("always");
-    }
-    return "granted";
-  } catch (e) {
-    console.log(e);
-    return null;
-  }
-};
+import { requestPermission } from "@/utils/requestPermission";
 
 const FullMap = () => {
   const [location, setLocation] = useState<GeoPosition | null>(null);
@@ -65,9 +54,9 @@ const FullMap = () => {
           }
           style={{ flex: 1 }}
           initialRegion={region}
-          showsUserLocation={true}
           mapType="terrain"
           customMapStyle={customMapStyle}
+          showsUserLocation={true}
         />
       )}
     </>
