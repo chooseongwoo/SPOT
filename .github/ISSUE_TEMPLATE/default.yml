@@ -1,0 +1,45 @@
+name: default
+description: 🔧 기능, 버그, 리팩토링 등의 이슈 작성
+title: '[📝] 작업 제목 작성'
+labels: ['todo']
+
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: 📂 작업 유형
+      description: 어떤 종류의 작업인가요?
+      options:
+        - ✨ 기능 추가
+        - 🐞 버그 수정
+        - ♻️ 리팩토링
+        - 📄 기타
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 📝 작업 내용
+      description: 어떤 작업인지 간단하게 요약해주세요
+      placeholder: 예) 특정 컴포넌트에 인터랙션 추가 / 입력값 검증 로직 개선
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 💬 메모 (선택)
+      description: 작업 시 참고할 사항이나 고민 포인트가 있다면 남겨주세요
+      placeholder: 예) 기존 컴포넌트 구조와 충돌이 없는지 확인 필요
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: 📷 참고 이미지 / 스크린샷 (선택)
+      description: UI 상태나 이슈 상황을 이미지로 공유하면 이해에 도움이 됩니다
+      placeholder: 예) 문제 발생 화면 또는 디자인 참고 이미지 첨부
+    validations:
+      required: false
