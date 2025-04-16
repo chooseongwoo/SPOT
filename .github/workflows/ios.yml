@@ -42,7 +42,8 @@ jobs:
             -scheme SPOT \
             -sdk iphoneos \
             -configuration Release \
-            -derivedDataPath build
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Archive App
         working-directory: ios
@@ -52,7 +53,10 @@ jobs:
             -sdk iphoneos \
             -configuration Release \
             -archivePath build/App.xcarchive \
-            archive
+            archive \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Export IPA
         working-directory: ios
