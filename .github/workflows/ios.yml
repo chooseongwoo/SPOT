@@ -66,9 +66,3 @@ jobs:
             -archivePath build/App.xcarchive \
             -exportPath output \
             -exportOptionsPlist ExportOptions.plist
-
-      - name: Upload IPA
-        uses: actions/upload-artifact@v3
-        with:
-          name: SPOT-iOS
-          path: ios/output/
