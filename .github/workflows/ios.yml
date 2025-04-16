@@ -64,7 +64,7 @@ jobs:
             -exportOptionsPlist ExportOptions.plist
 
       - name: Upload IPA Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: SPOT-iOS
           path: ios/output/
