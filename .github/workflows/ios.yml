@@ -33,12 +33,12 @@ jobs:
       - name: List Schemes
         working-directory: ios
         run: |
-          xcodebuild -project SPOT.xcodeproj -list
+          xcodebuild -workspace SPOT.xcworkspace -list
 
       - name: Build iOS
         working-directory: ios
         run: |
-          xcodebuild -project SPOT.xcodeproj \
+          xcodebuild -workspace SPOT.xcworkspace \
             -scheme SPOT \
             -sdk iphoneos \
             -configuration Release \
@@ -48,7 +48,7 @@ jobs:
       - name: Archive App
         working-directory: ios
         run: |
-          xcodebuild -project SPOT.xcodeproj \
+          xcodebuild -workspace SPOT.xcworkspace \
             -scheme SPOT \
             -sdk iphoneos \
             -configuration Release \
@@ -66,3 +66,9 @@ jobs:
             -archivePath build/App.xcarchive \
             -exportPath output \
             -exportOptionsPlist ExportOptions.plist
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v3
+        with:
+          name: SPOT-iOS
+          path: ios/output/
