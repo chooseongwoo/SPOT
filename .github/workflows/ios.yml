@@ -21,7 +21,7 @@ jobs:
       - name: Install Yarn
         run: npm install -g yarn
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: yarn install
 
       - name: Install CocoaPods
@@ -30,26 +30,29 @@ jobs:
           sudo gem install cocoapods
           pod install
 
-      - name: 🔍 Debug - List Schemes
+      - name: List Schemes
         working-directory: ios
-        run: xcodebuild -project SPOT.xcodeproj -list
+        run: |
+          xcodebuild -project SPOT.xcodeproj -list
 
       - name: Build iOS
         working-directory: ios
-        run: xcodebuild -project SPOT.xcodeproj \
-          -scheme SPOT \
-          -sdk iphoneos \
-          -configuration Release \
-          -derivedDataPath build
+        run: |
+          xcodebuild -project SPOT.xcodeproj \
+            -scheme SPOT \
+            -sdk iphoneos \
+            -configuration Release \
+            -derivedDataPath build
 
       - name: Archive App
         working-directory: ios
-        run: xcodebuild -project SPOT.xcodeproj \
-          -scheme SPOT \
-          -sdk iphoneos \
-          -configuration Release \
-          -archivePath build/App.xcarchive \
-          archive
+        run: |
+          xcodebuild -project SPOT.xcodeproj \
+            -scheme SPOT \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath build/App.xcarchive \
+            archive
 
       - name: Export IPA
         working-directory: ios
@@ -59,3 +62,9 @@ jobs:
             -archivePath build/App.xcarchive \
             -exportPath output \
             -exportOptionsPlist ExportOptions.plist
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: SPOT-iOS
+          path: ios/output/
