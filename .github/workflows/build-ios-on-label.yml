@@ -1,17 +1,16 @@
-name: iOS Build
+name: iOS Build (PR Label Triggered)
 
 on:
   pull_request:
-    branches: [main]
-  workflow_dispatch:
+    types: [labeled]
 
 jobs:
   ios-build:
+    if: contains(github.event.label.name, 'ci:build-ios')
     runs-on: macos-13
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Set up Node
         uses: actions/setup-node@v3
@@ -29,11 +28,6 @@ jobs:
         run: |
           sudo gem install cocoapods
           pod install
-
-      - name: List Schemes
-        working-directory: ios
-        run: |
-          xcodebuild -workspace SPOT.xcworkspace -list
 
       - name: Build iOS
         working-directory: ios
@@ -57,3 +51,18 @@ jobs:
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO
+
+      - name: Export IPA
+        working-directory: ios
+        run: |
+          mkdir -p output
+          xcodebuild -exportArchive \
+            -archivePath build/App.xcarchive \
+            -exportPath output \
+            -exportOptionsPlist ExportOptions.plist
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v3
+        with:
+          name: SPOT-iOS
+          path: ios/output/
