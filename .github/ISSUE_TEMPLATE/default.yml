@@ -1,6 +1,5 @@
 name: default
 description: 🔧 기능, 버그, 리팩토링 등의 이슈 작성
-placeholder: '[📝] 작업 제목 작성'
 labels: ['todo']
 
 body:
