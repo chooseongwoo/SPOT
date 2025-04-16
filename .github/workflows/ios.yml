@@ -3,6 +3,7 @@ name: iOS Build
 on:
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   ios-build:
@@ -23,15 +24,19 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Install Pods
+      - name: Install CocoaPods
         working-directory: ios
         run: |
           sudo gem install cocoapods
           pod install
 
+      - name: 🔍 Debug - List Schemes
+        working-directory: ios
+        run: xcodebuild -project SPOT.xcodeproj -list
+
       - name: Build iOS
         working-directory: ios
-        run: xcodebuild -workspace SPOT.xcworkspace \
+        run: xcodebuild -project SPOT.xcodeproj \
           -scheme SPOT \
           -sdk iphoneos \
           -configuration Release \
@@ -39,7 +44,7 @@ jobs:
 
       - name: Archive App
         working-directory: ios
-        run: xcodebuild -workspace SPOT.xcworkspace \
+        run: xcodebuild -project SPOT.xcodeproj \
           -scheme SPOT \
           -sdk iphoneos \
           -configuration Release \
