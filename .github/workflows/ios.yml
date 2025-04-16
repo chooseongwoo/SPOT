@@ -54,9 +54,3 @@ jobs:
             -archivePath build/App.xcarchive \
             -exportPath output \
             -exportOptionsPlist ExportOptions.plist
-
-      - name: Upload IPA Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: ios-build
-          path: ios/output/*.ipa
