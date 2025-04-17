@@ -55,7 +55,7 @@ function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Register"
+        name="History"
         component={HomeScreen}
         options={{
           title: '기록',
@@ -102,11 +102,11 @@ export default function RootNavigator() {
           ),
         })}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="MainTabs"
         component={TabNavigator}
         options={{headerShown: false}}
-      /> */}
+      />
     </Stack.Navigator>
   );
 }
