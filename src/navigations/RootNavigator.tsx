@@ -1,7 +1,10 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {View} from 'react-native';
 
+import RegisterScreen from '@/screens/(stack)/register';
+import HomeScreen from '@/screens/(tabs)/home';
 import {
   IconChevronLeft,
   IconHome,
@@ -12,7 +15,6 @@ import {
   RootStackParamList,
   TabParamList,
 } from '@/navigations/RootNavigationType';
-import HomeScreen from '@/screens/home';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -30,10 +32,6 @@ const COMMON_TAB_OPTIONS = {
   tabBarShowLabel: true,
   headerShown: false,
 };
-
-interface tabBarIconType {
-  color: string;
-}
 
 function TabNavigator() {
   return (
@@ -53,7 +51,7 @@ function TabNavigator() {
         component={HomeScreen}
         options={{
           title: '홈',
-          tabBarIcon: ({color}: tabBarIconType) => <IconHome color={color} />,
+          tabBarIcon: ({color}) => <IconHome color={color} />,
         }}
       />
       <Tab.Screen
@@ -61,9 +59,7 @@ function TabNavigator() {
         component={HomeScreen}
         options={{
           title: '기록',
-          tabBarIcon: ({color}: tabBarIconType) => (
-            <IconHistory color={color} />
-          ),
+          tabBarIcon: ({color}) => <IconHistory color={color} />,
         }}
       />
       <Tab.Screen
@@ -71,9 +67,7 @@ function TabNavigator() {
         component={HomeScreen}
         options={{
           title: '프로필',
-          tabBarIcon: ({color}: tabBarIconType) => (
-            <IconProfile color={color} />
-          ),
+          tabBarIcon: ({color}) => <IconProfile color={color} />,
         }}
       />
     </Tab.Navigator>
@@ -97,10 +91,22 @@ export default function RootNavigator() {
       }}
       initialRouteName="MainTabs">
       <Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={({navigation}) => ({
+          title: '프로필 설정',
+          headerLeft: () => (
+            <View style={{paddingLeft: 10}}>
+              <IconChevronLeft onPress={() => navigation.goBack()} />
+            </View>
+          ),
+        })}
+      />
+      {/* <Stack.Screen
         name="MainTabs"
         component={TabNavigator}
         options={{headerShown: false}}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }
