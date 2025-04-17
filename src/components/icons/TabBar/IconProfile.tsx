@@ -1,8 +1,8 @@
-import { IconType } from "@/types/icon.type";
-import React from "react";
-import Svg, { G, Path } from "react-native-svg";
+import {IconType} from '@/types';
+import React from 'react';
+import Svg, {G, Path} from 'react-native-svg';
 
-const IconProfile = ({ color }: IconType) => {
+const IconProfile = ({color}: IconType) => {
   return (
     <Svg width="24" height="25" viewBox="0 0 24 25" fill="none">
       <G id="icon_profile">

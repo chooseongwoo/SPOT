@@ -1,11 +1,11 @@
-import { IconType } from "@/types/icon.type";
-import React from "react";
-import Svg, { G, Path } from "react-native-svg";
+import {IconType} from '@/types';
+import React from 'react';
+import Svg, {G, Path} from 'react-native-svg';
 
-const IconHistory = ({ color }: IconType) => {
+const IconHistory = ({color}: IconType) => {
   return (
     <Svg width="25" height="25" viewBox="0 0 25 25" fill="none">
-      <G id="icon_invite">
+      <G id="icon_history">
         <Path
           id="vector"
           fillRule="evenodd"
