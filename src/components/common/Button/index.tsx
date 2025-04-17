@@ -20,8 +20,8 @@ const Button = ({title, onPress, isDisabled}: ButtonProps) => {
         )}>
         <Text
           className={clsx(
-            'text-white text-btn1',
-            isDisabled ? 'text-white' : 'text-gray-3',
+            'text-btn1',
+            +isDisabled ? 'text-gray-3' : 'text-white',
           )}>
           {title}
         </Text>
