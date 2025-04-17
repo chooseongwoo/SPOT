@@ -1,7 +1,13 @@
-import {Text} from 'react-native';
+import RootNavigator from '@/navigations/RootNavigator';
+import {NavigationContainer} from '@react-navigation/native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-function App() {
-  return <Text className="text-large">안녕하세용</Text>;
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <RootNavigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
-
-export default App;
